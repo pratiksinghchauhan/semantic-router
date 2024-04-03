@@ -1,7 +1,10 @@
 from typing import List
 
 from colorama import Fore, Style
-from pydantic.v1 import BaseModel, Extra
+try:
+    from pydantic.v1 import BaseModel, Extra
+except ImportError:
+    from pydantic import BaseModel, Extra
 
 from semantic_router.encoders import BaseEncoder
 from semantic_router.schema import DocumentSplit

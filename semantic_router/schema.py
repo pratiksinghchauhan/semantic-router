@@ -1,8 +1,12 @@
 from enum import Enum
 from typing import List, Optional
 
-from pydantic.v1 import BaseModel
-from pydantic.v1.dataclasses import dataclass
+try:
+    from pydantic.v1 import BaseModel
+    from pydantic.v1.dataclasses import dataclass
+except ImportError:
+    from pydantic import BaseModel
+    from pydantic.dataclasses import dataclass
 
 from semantic_router.encoders import (
     BaseEncoder,

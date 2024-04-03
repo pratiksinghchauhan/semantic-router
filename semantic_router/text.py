@@ -1,7 +1,11 @@
 from typing import List, Literal, Tuple, Union
 
 from colorama import Fore, Style
-from pydantic.v1 import BaseModel, Field
+try:
+    from pydantic.v1 import BaseModel, Field
+except ImportError:
+    from pydantic import BaseModel, Field
+
 
 from semantic_router.encoders import BaseEncoder
 from semantic_router.schema import DocumentSplit, Message

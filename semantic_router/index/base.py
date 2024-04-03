@@ -1,7 +1,10 @@
 from typing import Any, List, Optional, Tuple, Union
 
 import numpy as np
-from pydantic.v1 import BaseModel
+try:
+    from pydantic.v1 import BaseModel
+except ImportError:
+    from pydantic import BaseModel
 
 
 class BaseIndex(BaseModel):
