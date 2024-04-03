@@ -1,7 +1,11 @@
 from typing import Any, List, Optional
 
 import numpy as np
-from pydantic.v1 import PrivateAttr
+try:
+    from pydantic.v1 import PrivateAttr
+except ImportError:
+    from pydantic import PrivateAttr
+
 
 from semantic_router.encoders import BaseEncoder
 

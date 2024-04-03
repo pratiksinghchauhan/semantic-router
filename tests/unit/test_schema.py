@@ -1,5 +1,8 @@
 import pytest
-from pydantic.v1 import ValidationError
+try:
+    from pydantic.v1 import ValidationError
+except ImportError:
+    from pydantic import ValidationError
 
 from semantic_router.schema import (
     CohereEncoder,
